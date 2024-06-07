@@ -1,0 +1,7 @@
+services:
+  homework:
+    image: homework1:test
+    environment:
+      BACK_URL : http://localhost:8081
+    ports:
+      - "8080:8080"

@@ -1,7 +1,13 @@
 services:
-  homework:
-    image: homework1:test
+
+  backapp:
+    image: homework:backapp
+
+  frontapp:
+    image: homework:frontapp
     environment:
       BACK_URL : http://localhost:8081
     ports:
       - "8080:8080"
+
+    

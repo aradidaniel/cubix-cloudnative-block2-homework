@@ -5,6 +5,7 @@ ENV CUBIX_HOMEWORK="Aradi Daniel"
 ENV APP_DEFAULT_MESSAGE=""
 
 COPY backapp/target/*.jar backapp.jar
+
 CMD ["sh", "-c", "java -jar backapp.jar --server.port=8081"]
 
 
@@ -15,7 +16,6 @@ LABEL cubix.homework.owner="Aradi Daniel"
 EXPOSE 8080
 ENV CUBIX_HOMEWORK="Aradi Daniel"
 ENV APP_DEFAULT_MESSAGE=""
-ENTRYPOINT [""]
 
 COPY frontapp/target/*.jar frontapp.jar
 

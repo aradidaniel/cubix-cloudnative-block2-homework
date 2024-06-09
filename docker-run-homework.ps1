@@ -1,5 +1,4 @@
 #build images in both 
-
 mvnw clean verify
 
 #build container

@@ -1,13 +1,13 @@
 services:
 
   backapp:
-    image: homework:backapp
+    image: backapp
+    environment:
+      CMD_ARGS: "--server.port=8080"
 
   frontapp:
-    image: homework:frontapp
+    image: frontapp
     environment:
-      BACK_URL : http://backapp:8081
+      CMD_ARGS: "--back.url=http://backapp:8080"
     ports:
       - "8080:8080"
-    links:
-      - "backapp"

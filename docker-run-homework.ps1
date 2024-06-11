@@ -5,8 +5,8 @@ mvnw clean verify
 docker build -t homework:backapp --target backapp . --server.port=8081
 docker build -t homework:frontapp --target frontapp . --back.url=${BACK_URL}
 
-docker build --build-arg="JAR_PATH=backapp/target/*.jar" --build-arg=${CMD_ARGS} -t backapp .
-docker build --build-arg="JAR_PATH=frontapp/target/*.jar" --build-arg=${CMD_ARGS} -t frontapp .
+docker build --build-arg="JAR_PATH=backapp" -t backapp .
+docker build --build-arg="JAR_PATH=frontapp" -t frontapp .
 
 
 

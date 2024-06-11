@@ -2,12 +2,10 @@ services:
 
   backapp:
     image: backapp
-    environment:
-      CMD_ARGS: "--server.port=8080"
 
   frontapp:
     image: frontapp
     environment:
-      CMD_ARGS: "--back.url=http://backapp:8080"
+      BACK_URL : http://backapp:8080
     ports:
       - "8080:8080"

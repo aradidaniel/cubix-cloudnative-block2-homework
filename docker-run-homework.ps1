@@ -2,8 +2,8 @@
 mvnw clean verify
 
 #build container
-docker build --build-arg="JAR_PATH=backapp" -t backapp .
-docker build --build-arg="JAR_PATH=frontapp" -t frontapp .
+docker build -t backapp -f Dockerfile backapp
+docker build -t frontapp -f Dockerfile frontapp
 
 #check image labels
 docker inspect backapp

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backapp-deployment
+  labels:
+    homework: backapp
+    training: block3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      homework: backapp
+      training: block3
+  template:
+    metadata:
+      labels:
+        homework: backapp
+        training: block3
+    spec:
+      containers:
+      - name: backapp
+        image: quay.io/drsylent/cubix/block3/homework-backapp:springboot3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: APP_DEFAULT_MESSAGE
+          value: "backapp"
+        - name: JAVA_OPTS
+          value: -Dspring.main.banner-mode=off
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: backapp-service
+  labels:
+    homework: backapp
+    training: block3
+spec:
+  selector:
+    homework: backapp
+    training: block3
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

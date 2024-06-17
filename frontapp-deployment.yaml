@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontapp-deployment
+  name: frontapp
   labels:
     homework: frontapp
     training: block3
@@ -26,24 +26,6 @@ spec:
         - name: APP_DEFAULT_MESSAGE
           value: "frontapp"
         - name: BACK_URL
-          value: http://backapp-service:8080
+          value: http://backapp:8080
         - name: JAVA_OPTS
           value: 
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontapp-service
-  labels:
-    homework: frontapp
-    training: block3
-spec:
-  selector:
-    homework: frontapp
-    training: block3
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080

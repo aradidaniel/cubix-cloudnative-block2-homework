@@ -1,0 +1,6 @@
+namespace: hw4-prod-k
+resources:
+  - ../../base
+  - ingress.yaml
+  - namespace.yaml
+

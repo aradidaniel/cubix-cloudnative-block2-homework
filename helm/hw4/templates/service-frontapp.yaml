@@ -2,14 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontapp
+  namespace: {{ .Values.namespace }}
   labels:
     homework: frontapp
-    training: block3
+    training: block4
 spec:
   selector:
     homework: frontapp
-    training: block3
+    training: block4
   ports:
     - protocol: TCP
-      port: 8083
+      port: 8080
       targetPort: 8080

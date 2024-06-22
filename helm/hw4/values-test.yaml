@@ -1,0 +1,17 @@
+namespace: hw4-test
+
+frontapp:
+  replicas: 1
+  image: quay.io/drsylent/cubix/block3/homework-frontapp:springboot3
+  backUrl: "http://backapp:8080"
+  defaultMessage: "frontapp"
+  javaOpts: ""
+  ingress:
+    enabled: true
+    host: "other.cubix.localhost"
+    path: "/frontapp"
+backapp:
+  replicas: 1
+  image: quay.io/drsylent/cubix/block3/homework-backapp:springboot3
+  defaultMessage: "backapp"
+  javaOpts: ""

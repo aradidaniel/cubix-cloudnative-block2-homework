@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontapp
+  namespace: {{ .Values.namespace }}
+  labels:
+    homework: frontapp
+    training: block4
+spec:
+  replicas: {{ .Values.frontapp.replicas }}
+  selector:
+    matchLabels:
+      app: frontapp
+  template:
+    metadata:
+      labels:
+        app: frontapp
+        homework: frontapp
+        training: block4
+    spec:
+      containers:
+      - name: frontapp
+        image: {{ .Values.frontapp.image }}
+        env:
+        - name: BACK_URL
+          value: "{{ .Values.frontapp.backUrl }}"
+        - name: APP_DEFAULT_MESSAGE
+          value: "{{ .Values.frontapp.defaultMessage }}"
+        - name: JAVA_OPTS
+          value: "{{ .Values.frontapp.javaOpts }}"

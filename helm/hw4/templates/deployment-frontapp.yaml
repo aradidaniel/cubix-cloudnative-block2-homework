@@ -20,11 +20,15 @@ spec:
     spec:
       containers:
       - name: frontapp
-        image: {{ .Values.frontapp.image }}
+        image: {{ required "Name of image is required" .Values.frontapp.image }}
         env:
         - name: BACK_URL
-          value: "{{ .Values.frontapp.backUrl }}"
+          value: "http://backapp:8080"
         - name: APP_DEFAULT_MESSAGE
-          value: "{{ .Values.frontapp.defaultMessage }}"
+          value: "{{ required "Default message is required" .Values.frontapp.defaultMessage }}"
         - name: JAVA_OPTS
           value: "{{ .Values.frontapp.javaOpts }}"
+        {{- range .Values.frontapp.env}}
+        - name: {{ .name }} 
+          value: {{ .value }} 
+        {{- end }}

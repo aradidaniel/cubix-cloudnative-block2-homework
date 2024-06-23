@@ -20,9 +20,13 @@ spec:
     spec:
       containers:
       - name: backapp
-        image: {{ .Values.backapp.image }}
+        image: {{ required "Name of image is required" .Values.backapp.image }}
         env:
         - name: APP_DEFAULT_MESSAGE
-          value: "{{ .Values.backapp.defaultMessage }}"
+          value: "{{ required "Default message is required" .Values.backapp.defaultMessage }}"
         - name: JAVA_OPTS
           value: "{{ .Values.backapp.javaOpts }}"
+        {{- range .Values.backapp.env}}
+        - name: {{ .name }} 
+          value: {{ .value }} 
+        {{- end }}  

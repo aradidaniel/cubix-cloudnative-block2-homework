@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backapp
-  namespace: {{ .Values.namespace }}
   labels:
     homework: backapp
     training: block4

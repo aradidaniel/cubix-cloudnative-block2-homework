@@ -1,5 +1,3 @@
-namespace: hw4-dev
-
 frontapp:
   replicas: 1
   image: quay.io/drsylent/cubix/block3/homework-frontapp:springboot3

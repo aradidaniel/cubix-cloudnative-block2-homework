@@ -11,5 +11,5 @@ spec:
     training: block3
   ports:
     - protocol: TCP
-      port: 8083
+      port: 8080
       targetPort: 8080

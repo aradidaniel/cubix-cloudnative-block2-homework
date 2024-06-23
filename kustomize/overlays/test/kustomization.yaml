@@ -1,6 +1,5 @@
-namespace: hw4-test-k
+namespace: hw4-test
 resources:
   - ../../base
   - ingress.yaml
-  - namespace.yaml
 

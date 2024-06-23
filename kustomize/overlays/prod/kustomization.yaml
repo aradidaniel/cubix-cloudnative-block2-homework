@@ -1,6 +1,7 @@
-namespace: hw4-prod-k
+namespace: hw4-prod
 resources:
   - ../../base
   - ingress.yaml
-  - namespace.yaml
+patches:
+- path: patch-replicacount.yaml
 

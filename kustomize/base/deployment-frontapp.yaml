@@ -8,13 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      homework: backapp
-      training: block4
+      homework: frontapp
   template:
     metadata:
       labels:
-        homework: backapp
-        training: block4
+        homework: frontapp
     spec:
       containers:
       - name: frontapp

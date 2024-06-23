@@ -1,0 +1,7 @@
+namespace: hw4-test
+
+frontapp:
+  ingress:
+    enabled: true
+    host: "other.cubix.localhost"
+    path: "/frontapp"

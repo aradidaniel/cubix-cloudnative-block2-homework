@@ -1,4 +1,0 @@
-namespace: hw4-dev-k
-resources:
-  - ../../base
-  - namespace.yaml

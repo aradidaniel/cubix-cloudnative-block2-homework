@@ -7,7 +7,6 @@ metadata:
 spec:
   selector:
     homework: backapp
-    training: block4
   ports:
     - protocol: TCP
       port: 8080

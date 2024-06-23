@@ -7,7 +7,7 @@ metadata:
     training: block4
 spec:
   rules:
-    - host: kustomize.cubix.localhost
+    - host: application.cubix.localhost
       http:
         paths:
         - path: /frontapp

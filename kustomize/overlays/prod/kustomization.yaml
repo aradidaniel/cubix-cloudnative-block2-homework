@@ -1,6 +1,8 @@
 resources:
   - ../../base
   - ingress.yaml
+
 patches:
 - path: patch-replicacount.yaml
 
+namespace: hw4-prod
